@@ -1,0 +1,40 @@
+{
+  "manifest_version": 2,
+  "name": "Kindle export",
+  "version": "1.0",
+  "description": "Adds a browser action allowing to export Kindle notes and highlights.",
+  "icons": {
+    "48": "icons/icon.svg",
+    "96": "icons/icon.svg"
+  },
+  "background": {
+    "scripts": [
+      "background.js"
+    ]
+  },
+  "permissions": [
+    "activeTab"
+  ],
+  "page_action": {
+    "browser_style": true,
+    "default_icon": "icons/icon.svg",
+    "default_title": "Kindle export",
+    "show_matches": [
+      "https://read.amazon.com/notebook"
+    ]
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://read.amazon.com/notebook"
+      ],
+      "js": [
+        "lib/jquery/jquery-3.5.1.min.js",
+        "lib/bootstrap/bootstrap.bundle.min.js"
+      ],
+      "css": [
+        "lib/bootstrap/bootstrap.min.css"
+      ]
+    }
+  ]
+}
